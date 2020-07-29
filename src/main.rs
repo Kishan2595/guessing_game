@@ -7,7 +7,7 @@ fn main() {
     println!("Guess a number");
     let secret_number = rand::thread_rng().gen_range(1, 101);                   // `GENERATING A NEW NUMBER`
     println!("The secret number is: {}", secret_number);
-    loop {                                                                       // `CREATING A LOOP SO USER CAN GUESS THE NUMBER MULTIPLE TIMES`
+    loop {                                                                      // `CREATING A LOOP SO USER CAN GUESS THE NUMBER MULTIPLE TIMES`
         println!("Please input your guess.");
 
         let mut guess = String::new();                                          // created a mutable var i.e bound to a new empty instance of a str.
@@ -23,7 +23,10 @@ fn main() {
         match guess.cmp(&secret_number) {                                       // match is made up of arms(consisting patterns) 
             Ordering::Less => println!("Too small"),                            // as the pattern satisfies the code belonging to it runs
             Ordering::Greater => println!("Too big"),
-            Ordering::Equal => println!("You Win!"),
+            Ordering::Equal => {
+                println!("You Win!");
+                break;
+            }
         }
     }
 }
