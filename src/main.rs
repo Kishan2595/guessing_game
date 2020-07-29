@@ -6,7 +6,7 @@ fn main() {
     
     println!("Guess a number");
     let secret_number = rand::thread_rng().gen_range(1, 101);                   // `GENERATING A NEW NUMBER`
-    //println!("The secret number is: {}", secret_number);
+                                                                                //println!("The secret number is: {}", secret_number);
     loop {                                                                      // `CREATING A LOOP SO USER CAN GUESS THE NUMBER MULTIPLE TIMES`
         println!("Please input your guess.");
 
